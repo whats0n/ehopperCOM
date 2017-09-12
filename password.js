@@ -38,6 +38,7 @@
 		let $stepLowerCase = null;
 		let $stepUpperCase = null;
 		let $stepSymbols = null;
+		let $stepNumber = null;
 
 		$steps.each(function(i, step) {
 
@@ -56,6 +57,9 @@
 				break;
 				case 'symbols':
 					$stepSymbols = $step;
+				break;
+				case 'number':
+					$stepNumber = $step;
 				break;
 			};
 
@@ -91,8 +95,13 @@
 				);
 
 				validateSymbols = validation(
-					regexSpecialSymbols.test(value) && regexNumber.test(value),
+					regexSpecialSymbols.test(value),
 					$stepSymbols
+				);
+
+				validateNumber = validation(
+					regexNumber.test(value),
+					$stepNumber
 				);
 
 				$field.removeClass(ERROR);
