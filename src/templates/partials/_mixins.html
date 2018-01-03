@@ -1,0 +1,7 @@
+{% macro icon(i, classList) %}
+	<i class="fa fa-{{i}} {{classList}}" aria-hidden="true"></i>
+{% endmacro %}
+
+{% macro label(props) %}
+	<label for="{{props.for}}" class="v-label {{props.classList}}">{{props.title}}{% if props.required %}<span class="v-label__required" title="required">*</span>{% endif %}</label>
+{% endmacro %}

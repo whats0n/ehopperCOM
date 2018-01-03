@@ -1,0 +1,115 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="v-box">
+		<div class="v-box__container">
+			<div class="v-box__icon">
+				{{mixins.icon('check')}}
+			</div>
+			<h3 class="v-box__title">Thank you for your purchasing</h3>
+			<div class="v-box__description">
+				<p>Proceed to confirm the registration.</p>
+			</div>
+			<form action="/" class="v-box__form js-validation-form">
+				<div class="v-box__field">
+					{{mixins.label({
+						for: 'Business',
+						title: 'Business Type',
+						classList: 'v-box__label',
+						required: true
+					})}}
+					<select name="Business" class="v-select" id="Business">
+						{% for item in [
+							'Quick Service Restaurant',
+							'Coffee Shop',
+							'Bakery',
+							'Ice Cream Shop',
+							'Café/Bar',
+							'Vape Shop',
+							'Tobacco Shop',
+							'Liquor Shop',
+							'Retail Store',
+							'Florist',
+							'Other'
+						] %}
+							<option value="{{item}}">{{item}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="v-box__field js-validation-password">
+					{{mixins.label({
+						for: 'Password',
+						title: 'Password',
+						classList: 'v-box__label',
+						required: true
+					})}}
+					<input 
+						type="password" 
+						name="Password" 
+						id="Password" 
+						class="v-input js-validation-password-input" 
+					>
+					<div class="v-form-hint js-validation-password-hint">
+						<ul class="v-form-hint__list">
+							{% for item in [
+								{
+									type: 'length',
+									title: 'Password must be at least 9 characters'
+								},
+								{
+									type: 'lowercase',
+									title: 'Include a lowercase letter'
+								},
+								{
+									type: 'uppercase',
+									title: 'Include an uppercase letter'
+								},
+								{
+									type: 'number',
+									title: 'Include a number'
+								},
+								{
+									type: 'symbols',
+									title: 'Include a special character'
+								}
+							] %}
+							    <li class="v-form-hint__item js-validation-password-step" data-step-type="{{item.type}}">
+							    	<div class="v-form-hint__icon"> 
+							    		{{mixins.icon('close', 'v-form-hint__close')}}
+							    		<br>
+							    		{{mixins.icon('check', 'v-form-hint__check')}}
+							    	</div>
+							    	<div class="v-form-hint__title">{{item.title}}</div>
+							    </li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+				<div class="v-box__field">
+					{{mixins.label({
+						for: 'ConfirmPassword',
+						title: 'Confirm Password',
+						classList: 'v-box__label',
+						required: true
+					})}}
+					<input 
+						type="password" 
+						id="ConfirmPassword" 
+						class="v-input js-validation-confirm-input" 
+					>
+				</div>
+				<div class="v-box__submit">
+					<button class="v-btn v-btn_wide" type="submit">Register</button>
+				</div>
+			</form>
+			<div class="v-box__footnote">
+				<p>For any questions, call <a href="tel:2126518911">212-651-8911</a> or email <a href="mailto:support@ehopper.com">support@ehopper.com</a> for assistance.</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+.v-form-hint
+	position: absolute
+	top: 50%
+	right: 100%
+
+	display: none
+	padding: 10px 0
+	border: 1px solid #eee
+	width: 200px
+
+	background: #fdfdfd
+	transform: translate3d(-20px,-50%,0)
+	&.is-open
+		display: block
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 100%
+	&:before
+		margin-top: -12px
+		+arr(12, 24, #eee, r)
+	&:after
+		margin-top: -11px
+		+arr(10, 22, #fdfdfd, r)
+	&__item
+		position: relative
+		padding: 2px 10px 2px 40px
+		margin: 0
+		color: $red
+		font-size: 14px
+		line-height: 16px
+		list-style-type: none
+		&.is-success 
+			color: $green
+			.form-hint
+				&__close
+					display: none
+				&__check
+					display: inline-block
+	&__icon
+		position: absolute
+		top: 1px
+		left: 0
+		width: 40px
+		font-size: 0
+		line-height: 1
+		text-align: center
+	&__close,
+	&__check
+		display: inline-block
+		vertical-align: top
+		font-size: 18px
+	&__check
+		display: none

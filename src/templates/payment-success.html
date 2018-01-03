@@ -1,0 +1,28 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="v-box">
+		<div class="v-box__container">
+			<div class="v-box__icon">
+				{{mixins.icon('check')}}
+			</div>
+			<h3 class="v-box__title">Thank you for your purchasing</h3>
+			<div class="v-box__description">
+				<p>Your account will be upgraded shortly.</p>
+			</div>
+			<div class="v-box__form">
+				<div class="v-box__submit">
+					<a href="#" class="v-btn v-btn_wide">To Back Office</a>
+				</div>	
+			</div>
+			<div class="v-box__footnote">
+				<p>For any questions, call <a href="tel:2126518911">212-651-8911</a> or email <a href="mailto:support@ehopper.com">support@ehopper.com</a> for assistance.</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
