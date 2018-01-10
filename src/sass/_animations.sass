@@ -1,0 +1,42 @@
+[data-animation="icon"]
+	opacity: 0
+	animation: fade-top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.225s forwards
+
+[data-animation="title"]
+	opacity: 0
+	animation: fade-top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.2s forwards
+[data-animation="text"]
+	opacity: 0
+	animation: fade-top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.15s forwards
+[data-animation="form"]
+	opacity: 0
+	animation: fade 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.2s forwards
+[data-animation="footnote"]
+	opacity: 0
+	animation: fade-bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.2s forwards
+
+
+
+
+//KEYFRAMES
+@keyframes fade-top
+	0% 
+		opacity: 0
+		transform: translate3d(0,-50px,0)
+	100%
+		opacity: 1
+		+gpu
+
+@keyframes fade-bottom
+	0% 
+		opacity: 0
+		transform: translate3d(0,50px,0)
+	100%
+		opacity: 1
+		+gpu
+
+@keyframes fade
+	0% 
+		opacity: 0
+	100%
+		opacity: 1
