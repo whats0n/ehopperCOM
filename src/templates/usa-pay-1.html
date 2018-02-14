@@ -13,6 +13,7 @@ paymentHeader: true
 			<ul class="pay-steps__list">
 				{% for item in [
 					{
+						classList: 'is-active',
 						icon: 'fa fa-cogs',
 						title: 'Step 1'
 					},
@@ -25,7 +26,7 @@ paymentHeader: true
 						title: 'Step 3'
 					}
 				] %}
-					<li class="pay-steps__item">
+					<li class="pay-steps__item {{item.classList}}">
 						<div class="pay-steps__icon">
 							<i class="{{item.icon}}"></i>
 						</div>

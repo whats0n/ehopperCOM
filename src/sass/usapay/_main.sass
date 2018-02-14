@@ -7,6 +7,15 @@
 	&__section,
 	&__inner
 		height: 100%
+	&__back
+		position: absolute
+		z-index: 2
+		left: 20px
+		bottom: 35px
+		width: 80px
+		+ .pay__footer
+			+xs
+				padding-left: 120px
 	&__footer
 		position: absolute
 		left: 0
@@ -18,7 +27,8 @@
 			margin-bottom: 100px
 			height: calc(100% - 100px)
 	&__btn 
-		max-width: 400px
+		width: 100%
+		max-width: 360px
 	&__vertical
 		+vertical
 	&__center

@@ -1,6 +1,25 @@
 .pay-form
+	position: relative
 	margin: -10px
 	font-size: 0
+	&_splitted
+		margin: -10px -30px
+		&:before
+			content: ''
+			position: absolute
+			top: 10px
+			left: 50%
+			bottom: 10px
+			margin-left: -1px
+			border-left: 2px solid rgba(193, 203, 212, 0.3)
+			+xs
+				display: none
+		.pay-form__field
+			padding: 10px 30px
+			+ .pay-form__field
+				+xs 
+					padding-top: 20px
+					border-top: 2px solid rgba(193, 203, 212, 0.3)
 	&__field
 		position: relative
 		display: inline-block
@@ -11,6 +30,8 @@
 			width: 100%
 		&_wide
 			width: 100%
+		&_middle
+			vertical-align: middle
 	&__label
 		margin-bottom: 10px
 		color: $text
@@ -47,3 +68,20 @@
 		&:after
 			margin: 0 0 0 -11px
 			+arr(22,11,#fdfdfd,b)
+	&__row 
+		margin: -10px
+	&__col
+		display: inline-block
+		vertical-align
+		padding: 10px
+		width: 100%
+		&_md
+			width: 50%
+		&_xs-lg 
+			+xs 
+				width: 100%
+	&__title
+		padding: 0 0 28px
+		margin: 0
+		font-size: 24px
+		line-height: 1
