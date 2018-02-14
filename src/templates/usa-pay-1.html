@@ -1,0 +1,227 @@
+---
+title: Index page
+paymentHeader: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+<div class="pay">
+	<!-- begin steps -->
+	<div class="pay-steps">
+		<div class="pay-steps__inner">
+			<ul class="pay-steps__list">
+				{% for item in [
+					{
+						icon: 'fa fa-cogs',
+						title: 'Step 1'
+					},
+					{
+						icon: 'fa fa-cogs',
+						title: 'Step 2'
+					},
+					{
+						icon: 'fa fa-cogs',
+						title: 'Step 3'
+					}
+				] %}
+					<li class="pay-steps__item">
+						<div class="pay-steps__icon">
+							<i class="{{item.icon}}"></i>
+						</div>
+						<div class="pay-steps__title">{{item.title}}</div>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="pay-steps__line">
+				<div class="pay-steps__line-in"></div>
+			</div>
+		</div>
+	</div>
+	<!-- end steps -->
+
+	<!-- begin body -->
+	<div class="pay__body">
+		<div class="pay__section">
+			<!-- begin footer -->
+			<div class="pay__footer">
+				<button class="v-btn v-btn_wide pay__btn">Next</button>
+			</div>
+			<!-- end footer -->
+			
+			<!-- begin inner -->
+			<div class="pay__inner pay__vertical">
+				<div class="pay__container pay__center">
+					<form class="pay-form js-validation-form">
+						{% for item in [
+							{
+								label: {
+									for: 'StoreName',
+									title: 'Store Name',
+									classList: 'pay-form__label',
+									required: true
+								}
+							},
+							{
+								label: {
+									for: 'BusinessType',
+									title: 'Business Type',
+									classList: 'pay-form__label',
+									required: true
+								},
+								select: [
+									'Quick Service Restaurant',
+									'Coffee Shop',
+									'Bakery',
+									'Ice Cream Shop',
+									'Café/Bar',
+									'Vape Shop',
+									'Tobacco Shop',
+									'Liquor Shop',
+									'Retail Store',
+									'Florist',
+									'Other'
+								]
+							},
+							{
+								label: {
+									for: 'Country',
+									title: 'Country',
+									classList: 'pay-form__label',
+									required: true
+								},
+								select: [
+									'Afghanistan',
+									'Albania',
+									'Algeria',
+									'American Samoa',
+									'Andorra',
+									'Angola',
+									'Anguilla',
+									'Antarctica',
+									'Antigua and Barbuda',
+									'Argentina',
+									'Armenia',
+									'Aruba',
+									'Australia',
+									'Austria',
+									'Azerbaijan'
+								]
+							},
+							{
+								label: {
+									for: 'Email',
+									title: 'Email',
+									classList: 'pay-form__label',
+									required: true
+								},
+								type: 'email',
+								attrs: 'maxlength="200" required'
+							},
+							{
+								classList: 'js-validation-password',
+								label: {
+									for: 'Password',
+									title: 'Password',
+									classList: 'pay-form__label',
+									required: true
+								},
+								inputClassList: 'js-validation-password-input',
+								type: 'password',
+								password: true
+							},
+							{
+								classList: 'js-validation-password',
+								label: {
+									for: 'ConfirmPassword',
+									title: 'Confirm Password',
+									classList: 'pay-form__label',
+									required: true
+								},
+								inputClassList: 'js-validation-confirm-input',
+								type: 'password'
+							},
+							{
+								classList: 'pay-form__field_wide',
+								label: {
+									for: 'Phone',
+									title: 'Phone',
+									classList: 'pay-form__label',
+									required: true
+								}
+							}
+						] %}
+							<div class="pay-form__field {{item.classList}}">
+								{{mixins.label(item.label)}}
+								{% if item.select %}
+									<select name="{{item.label.for}}" class="v-select" id="{{item.label.for}}">
+										{% for item in item.select %}
+											<option value="{{item}}">{{item}}</option>
+										{% endfor %}
+									</select>
+								{% else %}
+									<input type="{{item.type or 'text'}}" name="{{item.label.for}}" id="{{item.label.for}}" class="v-input {{item.inputClassList}}" {{item.attrs | safe}}>
+								{% endif %}
+								{% if item.password %}
+									<div class="v-form-hint js-validation-password-hint">
+										<ul class="v-form-hint__list">
+											{% for item in [
+												{
+													type: 'length',
+													title: 'Password must be at least 9 characters'
+												},
+												{
+													type: 'lowercase',
+													title: 'Include a lowercase letter'
+												},
+												{
+													type: 'uppercase',
+													title: 'Include an uppercase letter'
+												},
+												{
+													type: 'number',
+													title: 'Include a number'
+												},
+												{
+													type: 'symbols',
+													title: 'Include a special character'
+												}
+											] %}
+											    <li class="v-form-hint__item js-validation-password-step" data-step-type="{{item.type}}">
+											    	<div class="v-form-hint__icon"> 
+											    		{{mixins.icon('close', 'v-form-hint__close')}}
+											    		<br>
+											    		{{mixins.icon('check', 'v-form-hint__check')}}
+											    	</div>
+											    	<div class="v-form-hint__title">{{item.title}}</div>
+											    </li>
+											{% endfor %}
+										</ul>
+									</div>
+								{% endif %}
+							</div>
+						{% endfor %}
+						<div class="pay-form__footer">
+							<div class="pay-form__checkbox">
+								<input name="AgreeWithTerms" class="input_checkbox is_empty" type="checkbox" id="AgreeWithTerms">
+								{{mixins.label({
+									for: 'AgreeWithTerms',
+									title: '<span>I agree with</span> <a href="/terms-of-use/" target="_blank" data-wpel-link="internal">Terms &amp; Conditions</a>',
+									classList: 'pay-form__label pay-form__label_inline',
+									required: true
+								})}}
+							</div>
+							<div class="pay-form__note">
+								<p>Need support? The best way to contact our support team is to submit a support request through email at <a href="mailto:support@ehopper.com">support@ehopper.com</a>. We want to make sure that you will have a great experience using the eHopper POS to manage your business.</p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- end inner -->
+		</div>
+	</div>
+	<!-- end body -->
+</div>
+
+{% endblock %}

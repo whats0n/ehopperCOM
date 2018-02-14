@@ -1,0 +1,69 @@
+$stepWidth: 33.33%
+
+.pay-steps
+		position: relative
+		padding: 20px
+		margin: 0 auto
+		max-width: 1400px
+		height: 135px
+		font-size: 0
+		text-align: center
+		+md 
+			max-width: 640px
+		&__inner 
+			position: relative
+		&__list,
+		&__item
+			list-style-type: none
+		&__list 
+			position: relative
+			z-index: 2
+			padding: 0
+			margin: 0
+		&__item
+			display: inline-block
+			vertical-align: top
+			width: $stepWidth
+			color: $gray
+			&.is-active,
+			&.is-prev
+				color: $blue
+				.v-guide-steps
+					&__icon 
+						border-color: $blue
+						color: $white
+						background: $blue
+		&__icon
+			margin: 0 auto 10px
+			border: 1px solid #c1cbd4
+			border-radius: 50%
+			width: 60px
+			height: 60px
+			color: #c1cbd4
+			background: $white
+			+vertical 
+			transition: background 0.25s, color 0.25s, border-color 0.25s
+			i 
+				display: inline-block
+				vertical-align: middle
+				font-size: 24px
+		&__title
+			font-size: 18px
+			+sm
+				font-size: 14px
+		&__line
+			position: absolute
+			z-index: 1
+			top: 30px
+			left: $stepWidth/2
+			right: $stepWidth/2
+			overflow: hidden
+			margin-top: -2px
+			height: 4px
+			background: #c1cbd4
+			&-in 
+				width: 100%
+				height: 100%
+				background: $blue
+				transform: translate3d(-100%,0,0)
+				transition: transform 0.4s

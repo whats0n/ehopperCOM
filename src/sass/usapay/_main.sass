@@ -1,0 +1,37 @@
+.pay
+	padding-top: 60px
+	height: 100%
+	background: #f8f8f8
+	&__body
+		height: calc(100% - 135px)
+	&__section,
+	&__inner
+		height: 100%
+	&__footer
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 20px
+		text-align: center
+		+ .pay__inner
+			margin-bottom: 100px
+			height: calc(100% - 100px)
+	&__btn 
+		max-width: 400px
+	&__vertical
+		+vertical
+	&__center
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+	&__container
+		position: relative
+		overflow: auto
+		padding: 30px
+		margin: 0 auto
+		max-width: 1024px
+		max-height: 100%
+		background: $white
+		box-shadow: 0 5px 25px -5px rgba(39, 55, 74, 0.15), 0 5px 20px -10px rgba(39, 55, 74, 0.1)
+		text-align: left

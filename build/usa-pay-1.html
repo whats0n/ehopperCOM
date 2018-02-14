@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Index page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css"> </head>
+
+  <body>
+    <!-- begin pay-header -->
+    <header class="pay-header">
+      <div class="pay-header__inner"> <img src="img/header.png" alt=""> </div>
+    </header>
+    <!-- end pay-header -->
+    <!-- BEGIN content -->
+    <div class="pay">
+      <!-- begin steps -->
+      <div class="pay-steps">
+        <div class="pay-steps__inner">
+          <ul class="pay-steps__list">
+            <li class="pay-steps__item">
+              <div class="pay-steps__icon"> <i class="fa fa-cogs"></i> </div>
+              <div class="pay-steps__title">Step 1</div>
+            </li>
+            <li class="pay-steps__item">
+              <div class="pay-steps__icon"> <i class="fa fa-cogs"></i> </div>
+              <div class="pay-steps__title">Step 2</div>
+            </li>
+            <li class="pay-steps__item">
+              <div class="pay-steps__icon"> <i class="fa fa-cogs"></i> </div>
+              <div class="pay-steps__title">Step 3</div>
+            </li>
+          </ul>
+          <div class="pay-steps__line">
+            <div class="pay-steps__line-in"></div>
+          </div>
+        </div>
+      </div>
+      <!-- end steps -->
+      <!-- begin body -->
+      <div class="pay__body">
+        <div class="pay__section">
+          <!-- begin footer -->
+          <div class="pay__footer"> <button class="v-btn v-btn_wide pay__btn">Next</button> </div>
+          <!-- end footer -->
+          <!-- begin inner -->
+          <div class="pay__inner pay__vertical">
+            <div class="pay__container pay__center">
+              <form class="pay-form js-validation-form">
+                <div class="pay-form__field "> <label for="StoreName" class="v-label pay-form__label">Store Name<span class="v-label__required" title="required">*</span></label> <input type="text" name="StoreName" id="StoreName" class="v-input "> </div>
+                <div class="pay-form__field ">
+                <label for="BusinessType" class="v-label pay-form__label">Business Type<span class="v-label__required" title="required">*</span></label> <select name="BusinessType" class="v-select" id="BusinessType">
+										
+											<option value="Quick Service Restaurant">Quick Service Restaurant</option>
+										
+											<option value="Coffee Shop">Coffee Shop</option>
+										
+											<option value="Bakery">Bakery</option>
+										
+											<option value="Ice Cream Shop">Ice Cream Shop</option>
+										
+											<option value="Café/Bar">Café/Bar</option>
+										
+											<option value="Vape Shop">Vape Shop</option>
+										
+											<option value="Tobacco Shop">Tobacco Shop</option>
+										
+											<option value="Liquor Shop">Liquor Shop</option>
+										
+											<option value="Retail Store">Retail Store</option>
+										
+											<option value="Florist">Florist</option>
+										
+											<option value="Other">Other</option>
+										
+									</select> </div>
+                <div class="pay-form__field "> <label for="Country" class="v-label pay-form__label">Country<span class="v-label__required" title="required">*</span></label> <select name="Country" class="v-select" id="Country">
+										
+											<option value="Afghanistan">Afghanistan</option>
+										
+											<option value="Albania">Albania</option>
+										
+											<option value="Algeria">Algeria</option>
+										
+											<option value="American Samoa">American Samoa</option>
+										
+											<option value="Andorra">Andorra</option>
+										
+											<option value="Angola">Angola</option>
+										
+											<option value="Anguilla">Anguilla</option>
+										
+											<option value="Antarctica">Antarctica</option>
+										
+											<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+										
+											<option value="Argentina">Argentina</option>
+										
+											<option value="Armenia">Armenia</option>
+										
+											<option value="Aruba">Aruba</option>
+										
+											<option value="Australia">Australia</option>
+										
+											<option value="Austria">Austria</option>
+										
+											<option value="Azerbaijan">Azerbaijan</option>
+										
+									</select> </div>
+                <div class="pay-form__field "> <label for="Email" class="v-label pay-form__label">Email<span class="v-label__required" title="required">*</span></label> <input type="email" name="Email" id="Email" class="v-input " maxlength="200" required> </div>
+                <div class="pay-form__field js-validation-password">
+                <label for="Password" class="v-label pay-form__label">Password<span class="v-label__required" title="required">*</span></label> <input type="password" name="Password" id="Password" class="v-input js-validation-password-input">
+                  <div class="v-form-hint js-validation-password-hint">
+                    <ul class="v-form-hint__list">
+                      <li class="v-form-hint__item js-validation-password-step" data-step-type="length">
+                        <div class="v-form-hint__icon"> <i class="fa fa-close v-form-hint__close" aria-hidden="true"></i> <br> <i class="fa fa-check v-form-hint__check" aria-hidden="true"></i> </div>
+                        <div class="v-form-hint__title">Password must be at least 9 characters</div>
+                      </li>
+                      <li class="v-form-hint__item js-validation-password-step" data-step-type="lowercase">
+                        <div class="v-form-hint__icon"> <i class="fa fa-close v-form-hint__close" aria-hidden="true"></i> <br> <i class="fa fa-check v-form-hint__check" aria-hidden="true"></i> </div>
+                        <div class="v-form-hint__title">Include a lowercase letter</div>
+                      </li>
+                      <li class="v-form-hint__item js-validation-password-step" data-step-type="uppercase">
+                        <div class="v-form-hint__icon"> <i class="fa fa-close v-form-hint__close" aria-hidden="true"></i> <br> <i class="fa fa-check v-form-hint__check" aria-hidden="true"></i> </div>
+                        <div class="v-form-hint__title">Include an uppercase letter</div>
+                      </li>
+                      <li class="v-form-hint__item js-validation-password-step" data-step-type="number">
+                        <div class="v-form-hint__icon"> <i class="fa fa-close v-form-hint__close" aria-hidden="true"></i> <br> <i class="fa fa-check v-form-hint__check" aria-hidden="true"></i> </div>
+                        <div class="v-form-hint__title">Include a number</div>
+                      </li>
+                      <li class="v-form-hint__item js-validation-password-step" data-step-type="symbols">
+                        <div class="v-form-hint__icon"> <i class="fa fa-close v-form-hint__close" aria-hidden="true"></i> <br> <i class="fa fa-check v-form-hint__check" aria-hidden="true"></i> </div>
+                        <div class="v-form-hint__title">Include a special character</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="pay-form__field js-validation-password"> <label for="ConfirmPassword" class="v-label pay-form__label">Confirm Password<span class="v-label__required" title="required">*</span></label> <input type="password" name="ConfirmPassword" id="ConfirmPassword" class="v-input js-validation-confirm-input">                  </div>
+                <div class="pay-form__field pay-form__field_wide"> <label for="Phone" class="v-label pay-form__label">Phone<span class="v-label__required" title="required">*</span></label> <input type="text" name="Phone" id="Phone" class="v-input "> </div>
+                <div class="pay-form__footer">
+                  <div class="pay-form__checkbox"> <input name="AgreeWithTerms" class="input_checkbox is_empty" type="checkbox" id="AgreeWithTerms"> <label for="AgreeWithTerms" class="v-label pay-form__label pay-form__label_inline"><span>I agree with</span> <a href="/terms-of-use/" target="_blank" data-wpel-link="internal">Terms &amp; Conditions</a><span class="v-label__required" title="required">*</span></label>                    </div>
+                  <div class="pay-form__note">
+                    <p>Need support? The best way to contact our support team is to submit a support request through email at <a href="mailto:support@ehopper.com">support@ehopper.com</a>. We want to make sure that you will have a great experience using the
+                      eHopper POS to manage your business.</p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- end inner -->
+        </div>
+      </div>
+      <!-- end body -->
+    </div>
+    <!-- END content -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>
