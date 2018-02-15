@@ -1,47 +1,57 @@
 .pay
-	padding-top: 60px
-	height: 100%
-	background: #f8f8f8
-	&__body
-		height: calc(100% - 135px)
-	&__section,
-	&__inner
-		height: 100%
-	&__back
-		position: absolute
-		z-index: 2
-		left: 20px
-		bottom: 35px
-		width: 80px
-		+ .pay__footer
-			+xs
-				padding-left: 120px
-	&__footer
-		position: absolute
-		left: 0
-		right: 0
-		bottom: 0
-		padding: 20px
-		text-align: center
-		+ .pay__inner
-			margin-bottom: 100px
-			height: calc(100% - 100px)
-	&__btn 
-		width: 100%
-		max-width: 360px
-	&__vertical
-		+vertical
-	&__center
-		display: inline-block
-		vertical-align: middle
-		width: 100%
-	&__container
-		position: relative
-		overflow: auto
-		padding: 30px
-		margin: 0 auto
-		max-width: 1024px
-		max-height: 100%
-		background: $white
-		box-shadow: 0 5px 25px -5px rgba(39, 55, 74, 0.15), 0 5px 20px -10px rgba(39, 55, 74, 0.1)
+	padding: 10px 0 40px
+	margin: 0 auto
+	max-width: 540px
+	text-align: center
+	&__section
+		padding: 20px 20px
+	&__form
+		padding: 10px 0
 		text-align: left
+	&__row 
+		position: relative
+		padding: 10px 0
+		margin: 0 -10px
+		font-size: 0
+	&__col 
+		padding: 0 10px
+		&_md 
+			display: inline-block
+			vertical-align: top
+			width: 50%
+		&_xs-wide
+			+xs 
+				width: 100%
+			&:not(:first-child)
+				+xs 
+					padding-top: 20px
+		.pay__row 
+			padding-top: 0
+			padding-bottom: 0
+	&__label
+		margin-bottom: 10px
+		font-size: 14px
+		line-height: 16px
+		&_inline 
+			margin: 0 0 0 10px
+	&__description
+		padding-top: 30px
+		padding-bottom: 10px
+		text-align: left
+	&__submit
+		margin: 0 auto
+		max-width: 300px
+	.v-form-hint
+		+md 
+			position: relative
+			top: auto 
+			left: auto 
+			right: auto 
+			bottom: auto
+			margin: 10px 10px 0
+			width: auto
+			+gpu
+		&:before,
+		&:after
+			+md 
+				display: none

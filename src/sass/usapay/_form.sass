@@ -1,37 +1,41 @@
 .pay-form
 	position: relative
+	padding: 0 250px
 	margin: -10px
 	font-size: 0
-	&_splitted
-		margin: -10px -30px
-		&:before
-			content: ''
-			position: absolute
-			top: 10px
-			left: 50%
-			bottom: 10px
-			margin-left: -1px
-			border-left: 2px solid rgba(193, 203, 212, 0.3)
-			+xs
-				display: none
-		.pay-form__field
-			padding: 10px 30px
-			+ .pay-form__field
-				+xs 
-					padding-top: 20px
-					border-top: 2px solid rgba(193, 203, 212, 0.3)
+	// &_splitted
+	// 	margin: -10px -30px
+	// 	&:before
+	// 		content: ''
+	// 		position: absolute
+	// 		top: 10px
+	// 		left: 50%
+	// 		bottom: 10px
+	// 		margin-left: -1px
+	// 		border-left: 2px solid rgba(193, 203, 212, 0.3)
+	// 		+xs
+	// 			display: none
+	// 	.pay-form__field
+	// 		padding: 10px 30px
+	// 		+ .pay-form__field
+	// 			+xs 
+	// 				padding-top: 20px
+	// 				border-top: 2px solid rgba(193, 203, 212, 0.3)
 	&__field
 		position: relative
 		display: inline-block
-		vertical-align
+		vertical-align: top
 		padding: 10px
-		width: 50%
-		+xs 
-			width: 100%
-		&_wide
-			width: 100%
-		&_middle
-			vertical-align: middle
+		width: 100%
+		// width: 50%
+		// +xs 
+		// 	width: 100%
+		// &_wide
+		// 	width: 100%
+		// &_middle
+		// 	vertical-align: middle
+		&_md
+			width: 50%
 	&__label
 		margin-bottom: 10px
 		color: $text
@@ -53,21 +57,25 @@
 		font-size: 14px
 		line-height: 16px
 	.v-form-hint
-		top: auto
-		left: 0
-		right: auto
-		bottom: 100%
-		transform: translate3d(10px,15px,0)
-		&:before,
-		&:after
-			top: 100%
-			left: 50%
-		&:before
-			margin: 0 0 0 -12px
-			+arr(24,12,#eee,b)
-		&:after
-			margin: 0 0 0 -11px
-			+arr(22,11,#fdfdfd,b)
+		top: 0
+		width: 240px
+		transform: translate3d(-10px,-10px,0)
+		+md 
+			position: relative
+			top: auto 
+			right: auto 
+			width: 100%
+			+gpu
+		// &:before,
+		// &:after
+		// 	top: 100%
+		// 	left: 50%
+		// &:before
+		// 	margin: 0 0 0 -12px
+		// 	+arr(24,12,#eee,b)
+		// &:after
+		// 	margin: 0 0 0 -11px
+		// 	+arr(22,11,#fdfdfd,b)
 	&__row 
 		margin: -10px
 	&__col
