@@ -1,0 +1,27 @@
+{% import "partials/_mixins.html" as mixins %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="../css/onboarding.css">
+  </head>
+  <body>
+
+    <!-- BEGIN content -->
+    {% block content %}{% endblock %}
+    <!-- END content -->
+    
+    <script>
+      window.addEventListener("message", function(e) {
+        alert(e.data);
+      });
+    </script>
+
+  </body>
+</html>
