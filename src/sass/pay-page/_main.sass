@@ -55,6 +55,8 @@
 		&:not(:last-child)
 			&:after
 				content: ''
-				display: block
+				display: none
 				margin: 10px 0
 				border-bottom: 1px solid rgba($black, 0.2)
+				+sm 
+					display: block
