@@ -1,0 +1,42 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div>
+		<select class="js-lang">
+			<option value="en">en</option>
+			<option value="ru">ru</option>
+			<option value="ua">ua</option>
+			<option value="fr">fr</option>
+		</select>
+	</div>
+	<iframe src="https://ehopper.com/wp-content/uploads/welcome.html" frameborder="0" style="width: 600px; height: 500px;" name="welcome" class="js-iframe"></iframe>
+	<iframe src="https://ehopper.com/wp-content/uploads/upgrade.html" frameborder="0" style="width: 600px; height: 500px;" name="upgrade" class="js-iframe"></iframe>
+	<iframe src="onboarding/success.html" frameborder="0" style="width: 600px; height: 500px;" name="success"></iframe>
+
+	<script>
+		window.addEventListener('load', function() {
+			var iframes = document.querySelectorAll('.js-iframe');
+
+			function setLang(lang) {
+				Array.prototype.forEach.call(iframes, function(iframe) {
+					var name = iframe.getAttribute('name');
+					var iframeWindow = window.frames[name];
+					iframeWindow.postMessage(lang, '*');
+				});
+			};
+
+			document
+				.querySelector('.js-lang')
+				.addEventListener('change', function(e) { 
+					setLang(this.value);
+				});
+
+			setLang(null);
+		});
+	</script>
+
+{% endblock %}

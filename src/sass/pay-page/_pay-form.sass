@@ -1,0 +1,32 @@
+.payment-form
+	text-align: left
+	&__title
+		padding: 0 0 28px
+		margin: 0
+		font-size: 24px
+		line-height: 1
+	&__row 
+		position: relative
+		padding: 10px 0
+		margin: 0 -10px
+		font-size: 0
+	&__col 
+		padding: 0 10px
+		&_md 
+			display: inline-block
+			vertical-align: top
+			width: 50%
+		&_xs-wide
+			+xs 
+				width: 100%
+			&:not(:first-child)
+				+xs 
+					padding-top: 20px
+		.payment-form__row 
+			padding-top: 0
+			padding-bottom: 0
+	&__label
+		margin-bottom: 10px
+		color: $text
+		font-size: 14px
+		line-height: 16px

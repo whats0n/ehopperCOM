@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Index page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css"> </head>
+
+  <body>
+    <!-- BEGIN content -->
+    <!-- begin pay-page -->
+    <div class="pay-page">
+      <div class="pay-page__footer"> <button class="v-btn v-btn_wide pay-page__submit" type="submit">Process Payment <i class="fa fa-angle-right"></i></button> </div>
+      <div class="pay-page__inner pay-page__vertical">
+        <div class="pay-page__container pay-page__center">
+          <div class="pay-page__row">
+            <div class="pay-page__col pay-page__col_45">
+              <!-- begin pay-number -->
+              <div class="pay-number">
+                <div class="pay-price">
+                  <div class="pay-price__label"> <small>$</small> <strong data-price="39.99">39.99</strong> mo per register </div>
+                </div>
+                <div class="spinner" data-spinner> <button class="spinner__minus" type="button" data-spinner-control="down" disabled></button> <button class="spinner__plus" type="button" data-spinner-control="up"></button> <input type="text" value="1" data-spinner-input data-min="1" data-max="100"
+                    class="form-control input-lg spinner__input"> </div>
+                <div class="pay-price">
+                  <div class="pay-price__label">Total:</div>
+                  <div class="pay-price__main"> <small>$</small> <strong data-total>39.99</strong> </div>
+                </div>
+              </div>
+              <!-- end pay-number -->
+            </div>
+            <div class="pay-page__col pay-page__col_55">
+              <div class="payment-form">
+                <h2 class="payment-form__title">Payment Method</h2>
+                <div class="payment-form__row">
+                  <div class="payment-form__col payment-form__col_md payment-form__col_xs-wide"> <label for="FirstName" class="v-label payment-form__label">First Name<span class="v-label__required" title="required">*</span></label> <input type="text" name="FirstName" id="FirstName" class="v-input"> </div>
+                  <div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+                  <label for="LastName" class="v-label payment-form__label">Last Name<span class="v-label__required" title="required">*</span></label> <input type="text" name="LastName" id="LastName" class="v-input"> </div>
+                </div>
+                <div class="payment-form__row">
+                  <div class="payment-form__col payment-form__col_md payment-form__col_xs-wide"> <label for="Email" class="v-label payment-form__label">Email<span class="v-label__required" title="required">*</span></label> <input type="text" name="FirstName" id="FirstName" class="v-input"> </div>
+                  <div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+                  <label for="Phone" class="v-label payment-form__label">Phone<span class="v-label__required" title="required">*</span></label> <input type="text" name="LastName" id="LastName" class="v-input"> </div>
+                </div>
+                <div class="payment-form__row">
+                  <div class="payment-form__col"> <label for="CardNumber" class="v-label payment-form__label">Card Number<span class="v-label__required" title="required">*</span></label> <input type="text" name="CardNumber" id="CardNumber" class="v-input"> </div>
+                </div>
+                <div class="payment-form__row">
+                  <div class="payment-form__col payment-form__col_md payment-form__col_xs-wide"> <label for="ExpirationDate" class="v-label payment-form__label">Expiration Date<span class="v-label__required" title="required">*</span></label>
+                    <div class="payment-form__row">
+                      <div class="payment-form__col payment-form__col_md"> <select name="ExpirationDateMonth" class="v-select" id="ExpirationDateMonth">
+						
+							<option value="1">1</option>
+						
+							<option value="2">2</option>
+						
+							<option value="3">3</option>
+						
+							<option value="4">4</option>
+						
+					</select> </div>
+                      <div class="payment-form__col payment-form__col_md"> <select name="ExpirationDateYear" class="v-select" id="ExpirationDateYear">
+						
+							<option value="2018">2018</option>
+						
+							<option value="2019">2019</option>
+						
+							<option value="2020">2020</option>
+						
+							<option value="2021">2021</option>
+						
+					</select> </div>
+                    </div>
+                  </div>
+                  <div class="payment-form__col payment-form__col_md payment-form__col_xs-wide"> <label for="SecurityCode" class="v-label payment-form__label">Security Code<span class="v-label__required" title="required">*</span></label> <input type="password" name="SecurityCode" id="SecurityCode" class="v-input"> </div>
+                </div>
+                <div class="payment-form__row">
+                  <div class="payment-form__col"> <input name="AgreeWithTerms" class="input_checkbox is_empty" type="checkbox" id="AgreeWithTerms"> <label for="AgreeWithTerms" class="v-label pay__label pay__label_inline">I agree with <a href="https://ehopper.com/terms-of-use/" target="_blank">Terms &amp; Conditions</a><span class="v-label__required" title="required">*</span></label>                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end pay-page -->
+    <!-- END content -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>

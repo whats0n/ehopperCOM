@@ -1,0 +1,28 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<!-- begin pay-page -->
+	<div class="pay-page">
+		<div class="pay-page__footer">
+			<button class="v-btn v-btn_wide pay-page__submit" type="submit">Process Payment <i class="fa fa-angle-right"></i></button>
+		</div>
+		<div class="pay-page__inner pay-page__vertical">
+			<div class="pay-page__container pay-page__center">
+				<div class="pay-page__row">
+					<div class="pay-page__col pay-page__col_45">
+						{% include 'partials/pay-page/_payment.html' %}
+					</div>
+					<div class="pay-page__col pay-page__col_55">
+						{% include 'partials/pay-page/_pay-form.html' %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end pay-page -->
+
+{% endblock %}

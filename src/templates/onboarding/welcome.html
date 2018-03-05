@@ -5,11 +5,23 @@ title: Welcome
 
 {% block content %}
 
-	<div class="g-box-iframe">
-		<div class="g-box-iframe__center">
-			<h3>Welcome to eHopper</h3>
-			<p>We are very excited to help you take the first steps in joining a community of the many other retailers and merchants who are choosing a smarter, easier, and better way of doing business!</p>
+	{% for item in [
+		{
+			lang: 'en',
+			title: 'Welcome to eHopper',
+			content: [
+				'We are very excited to help you take the first steps in joining a community of the many other retailers and merchants who are choosing a smarter, easier, and better way of doing business!'
+			]
+		}
+	] %}
+		<div class="g-box-iframe">
+			<div class="g-box-iframe__center">
+				<h3>{{item.title}}</h3>
+				{% for item in item.content %}
+					<p>{{item | safe}}</p>
+				{% endfor %}
+			</div>
 		</div>
-	</div>
+	{% endfor %}
 
 {% endblock %}

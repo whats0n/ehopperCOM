@@ -9,7 +9,9 @@
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="../css/onboarding.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="onboarding.css">
+    {#<link rel="stylesheet" href="../css/onboarding.css">#}
   </head>
   <body>
 
@@ -17,11 +19,37 @@
     {% block content %}{% endblock %}
     <!-- END content -->
     
-    <script>
-      window.addEventListener("message", function(e) {
-        alert(e.data);
-      });
-    </script>
+    {#<script>
+      //START SHOW CURRENT CONTENT
+      (function() {
+        
+        var defaultLang = 'en';
+        var ACTIVE = 'is-active';
+
+        var items = document.querySelectorAll('[data-lang]');
+        var defaultItem = document.querySelector('[data-lang="' + defaultLang + '"]');
+
+        function showCurrent(activeLang) {
+          var activeItem = null;
+
+          Array.prototype.forEach.call(items, function(item) {
+            item.classList.remove(ACTIVE);
+            if (activeLang === item.getAttribute('data-lang')) {
+              item.classList.add(ACTIVE);
+              activeItem = item;
+            }
+          });
+          
+          (!activeItem && defaultItem) && defaultItem.classList.add(ACTIVE);
+        }
+
+        window.addEventListener("message", function(e) {
+          showCurrent(e.data);
+        });
+
+      })();
+      //END SHOW CURRENT CONTENT
+    </script>#}
 
   </body>
 </html>

@@ -1,0 +1,95 @@
+<div class="payment-form">
+	<h2 class="payment-form__title">Payment Method</h2>
+	<div class="payment-form__row">
+		<div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+			{{mixins.label({
+				for: 'FirstName',
+				title: 'First Name',
+				classList: 'payment-form__label',
+				required: true
+			})}}
+			<input type="text" name="FirstName" id="FirstName" class="v-input">
+		</div>
+		<div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+			{{mixins.label({
+				for: 'LastName',
+				title: 'Last Name',
+				classList: 'payment-form__label',
+				required: true
+			})}}
+			<input type="text" name="LastName" id="LastName" class="v-input">
+		</div>
+	</div>
+	<div class="payment-form__row">
+		<div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+			{{mixins.label({
+				for: 'Email',
+				title: 'Email',
+				classList: 'payment-form__label',
+				required: true
+			})}}
+			<input type="text" name="FirstName" id="FirstName" class="v-input">
+		</div>
+		<div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+			{{mixins.label({
+				for: 'Phone',
+				title: 'Phone',
+				classList: 'payment-form__label',
+				required: true
+			})}}
+			<input type="text" name="LastName" id="LastName" class="v-input">
+		</div>
+	</div>
+	<div class="payment-form__row">
+		<div class="payment-form__col">
+			{{mixins.label({
+				for: 'CardNumber',
+				title: 'Card Number',
+				classList: 'payment-form__label',
+				required: true
+			})}}
+			<input type="text" name="CardNumber" id="CardNumber" class="v-input">
+		</div>
+	</div>
+	<div class="payment-form__row">
+		<div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+			{{mixins.label({
+				for: 'ExpirationDate',
+				title: 'Expiration Date',
+				classList: 'payment-form__label',
+				required: true
+			})}}
+			<div class="payment-form__row">
+				<div class="payment-form__col payment-form__col_md">
+					<select name="ExpirationDateMonth" class="v-select" id="ExpirationDateMonth">
+						{% for item in [ '1', '2', '3', '4' ] %}
+							<option value="{{item}}">{{item}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="payment-form__col payment-form__col_md">
+					<select name="ExpirationDateYear" class="v-select" id="ExpirationDateYear">
+						{% for item in [ '2018', '2019', '2020', '2021' ] %}
+							<option value="{{item}}">{{item}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="payment-form__col payment-form__col_md payment-form__col_xs-wide">
+			{{mixins.label({
+				for: 'SecurityCode',
+				title: 'Security Code',
+				classList: 'payment-form__label',
+				required: true
+			})}}
+			<input type="password" name="SecurityCode" id="SecurityCode" class="v-input">
+		</div>
+	</div>
+	<div class="payment-form__row">
+		<div class="payment-form__col">
+			<input name="AgreeWithTerms" class="input_checkbox is_empty" type="checkbox" id="AgreeWithTerms">
+			<label for="AgreeWithTerms" class="v-label pay__label pay__label_inline">I agree with <a href="https://ehopper.com/terms-of-use/" target="_blank">Terms &amp; Conditions</a><span class="v-label__required" title="required">*</span></label>
+		</div>
+	</div>
+</div>
