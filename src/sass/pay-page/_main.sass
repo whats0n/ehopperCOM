@@ -1,25 +1,14 @@
 .pay-page
 	position: relative
 	padding: 20px
-	height: 100%
-	min-height: 620px
+	// height: 100%
+	// min-height: 620px
 	background: #f8f8f8
 	+sm 
 		padding: 15px
 	&__footer
-		position: absolute
-		z-index: 2
-		left: 0
-		right: 0
-		bottom: 0
-		padding: 20px
+		padding: 20px 0 0
 		text-align: center
-		+sm 
-			padding: 20px 15px
-		~ .pay-page__vertical
-			height: calc(100% - 80px)
-			+sm 
-				height: calc(100% - 80px)
 	&__submit
 		max-width: 300px
 	&__vertical
