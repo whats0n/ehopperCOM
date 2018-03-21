@@ -8,4 +8,6 @@ PageList:
 - file: usa-pay-2.1.html
 - file: onboarding/welcome.html
 - file: onboarding/upgrade.html
+- file: onboarding/success.html
+- file: onboarding/error.html
 - file: iframes.html
