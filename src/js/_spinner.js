@@ -1,6 +1,12 @@
 var UP = 'up';
 var DOWN = 'down';
 var numberPattern = /\d+/g;
+var couponValue = null;
+const coupon = {
+  percentage: 'Percentage',
+  fixed: 'Fixed amount',
+  fixedUnit: 'Fixed amount per unit'
+};
 
 function getValues(input) {
   return {
@@ -28,8 +34,10 @@ function disableControls(buttons, direction) {
 function setTotal(quantity) {
   var price = $('[data-price]').data('price');
   var total = $('[data-total]');
+  var totalVal = (price*quantity).toFixed(2);
+  var totalValUpdated = couponValue === coupon.fixed ? (totalVal - 10).toFixed(2) : totalVal;
 
-  total.text((price*quantity).toFixed(2));
+  total.text(totalValUpdated);
 }
 
 $('[data-spinner]').each((i, spinner) => {
@@ -99,4 +107,32 @@ $('[data-spinner]').each((i, spinner) => {
     input.val(newVal);
   });
   //END HANDLE INPUT
+});
+
+const price = $('[data-price]');
+const priceValue = +(price.data('price')).toFixed(2);
+
+$('[data-coupon*="button"]').on('click', e => {
+  e.preventDefault();
+  const value = $('[data-coupon*="input"]').val();
+  let priceNewValue = priceValue;
+  
+  switch (value) {
+    case coupon.percentage:
+      priceNewValue = priceValue * 0.9;
+      break;
+    case coupon.fixedUnit:
+      priceNewValue = priceValue - 10;
+      break;
+  }
+
+  couponValue = value;
+
+  priceNewValue = priceNewValue.toFixed(2);
+
+  price.data('price', priceNewValue);
+  price.text(priceNewValue);
+
+  $('[data-spinner-input]').trigger('input');
+
 });
