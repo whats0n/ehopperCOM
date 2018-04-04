@@ -12,24 +12,8 @@ title: Index page
 			<div class="pay-page__container pay-page__center">
 				<div class="pay-page__row">
 					<div class="pay-page__col pay-page__col_45">
+						{% set paymentCoupon = true %}
 						{% include 'partials/pay-page/_payment.html' %}
-						<div class="field pay-page__field">
-							{{mixins.label({
-								for: 'CouponСode',
-								title: 'Coupon сode:',
-								classList: 'field__label'
-							})}}
-							<div class="field__container">
-								<div class="field__row">
-									<div class="field__input">
-										<input type="text" id="CouponСode" class="v-input" data-coupon="input" placeholder="Enter Coupon">
-									</div>
-									<div class="field__button">
-										<button class="v-btn v-btn_sm" data-coupon="button" type="button">Upgrade</button>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div class="pay-page__col pay-page__col_55">
 						{% include 'partials/pay-page/_pay-form.html' %}
