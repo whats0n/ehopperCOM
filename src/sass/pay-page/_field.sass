@@ -13,6 +13,7 @@
 		display: table-row
 	&__input,
 	&__button
+		position: relative
 		display: table-cell
 		vertical-align: top
 	&__button
@@ -23,3 +24,11 @@
 		font-size: 14px
 		line-height: 44px
 		text-align: center
+	&__error-message
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0
+		padding: 5px 0
+		color: $red
+		font-size: 13px

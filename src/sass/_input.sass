@@ -19,5 +19,10 @@
 		cursor: not-allowed
 	&.is-error
 		border-color: $red
+		~ .error-message
+			display: block
 	&.is-success
 		border-color: $green
+
+.error-message
+	display: none
