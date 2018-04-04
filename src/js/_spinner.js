@@ -132,6 +132,11 @@ $('[data-coupon*="button"]').on('click', e => {
 
   price.data('price', priceNewValue);
   price.text(priceNewValue);
+  
+  if (value && value.length) {
+    $('[data-coupon="text"]').text(value).attr('hidden', false);
+    $('[data-coupon="field"').attr('hidden', true);
+  }
 
   $('[data-spinner-input]').trigger('input');
 
