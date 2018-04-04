@@ -111,6 +111,7 @@ $('[data-spinner]').each((i, spinner) => {
 
 const price = $('[data-price]');
 const priceValue = +(price.data('price')).toFixed(2);
+const ERROR = 'is-error';
 
 $('[data-coupon*="button"]').on('click', e => {
   e.preventDefault();
@@ -126,6 +127,16 @@ $('[data-coupon*="button"]').on('click', e => {
       break;
   }
 
+  if (value && value.length) $('[data-coupon*="input"]').addClass(ERROR);
+
+  switch (value) {
+    case coupon.percentage:
+    case coupon.fixed:
+    case coupon.fixedUnit:
+      $('[data-coupon*="input"]').removeClass(ERROR);
+      break;
+  }
+
   couponValue = value;
 
   priceNewValue = priceNewValue.toFixed(2);
@@ -133,11 +144,19 @@ $('[data-coupon*="button"]').on('click', e => {
   price.data('price', priceNewValue);
   price.text(priceNewValue);
   
-  if (value && value.length) {
-    $('[data-coupon="text"]').text(value).attr('hidden', false);
-    $('[data-coupon="field"').attr('hidden', true);
+  if (value && value.length && !$('[data-coupon*="input"]').hasClass(ERROR)) {
+    $('[data-coupon*="cancel"]').attr('hidden', false);
+    $('[data-coupon*="button"').attr('hidden', true);
+    $('[data-coupon*="input"]').attr('disabled', true);
   }
 
   $('[data-spinner-input]').trigger('input');
 
+});
+
+$('[data-coupon*="cancel"]').on('click', e => {
+  $('[data-coupon*="input"]').val('').attr('disabled', false);
+  $('[data-coupon*="button"]').trigger('click');
+  $('[data-coupon*="cancel"]').attr('hidden', true);
+  $('[data-coupon*="button"').attr('hidden', false);
 });

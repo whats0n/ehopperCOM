@@ -14,6 +14,9 @@
 	font-size: 14px
 	line-height: normal
 	appearance: none
+	&:disabled
+		background: lighten(gray, 45%)
+		cursor: not-allowed
 	&.is-error
 		border-color: $red
 	&.is-success
